@@ -15,12 +15,12 @@
     <!-- Styles / Scripts -->
     @viteReactRefresh
     @vite(['resources/js/app.jsx', 'resources/css/app.css'])
-    
+
 </head>
-    <div id="app">
-        <div id="root">
-            
-        </div>
+<div id="app">
+    <div id="root">
     </div>
+</div>
 </body>
+
 </html>

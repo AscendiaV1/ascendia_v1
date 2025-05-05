@@ -13,10 +13,7 @@
 - `make code-format`: run npm command to run prettier to format your code
 - `make code-test`: run php artisan test command
 
-<!-- USAGE EXAMPLES -->
 ## Run App Manually
-
-![preview-docker-laravel](https://user-images.githubusercontent.com/49280352/131224609-401fcd2b-a815-49f2-8164-b6d9b77df87c.gif)
 
 - Create .env file for the Laravel environment from .env.example on src folder
 - Run command ```docker-compose build``` on your terminal
