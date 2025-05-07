@@ -1,34 +1,30 @@
 {
-  "_index-xsH4HHeE.js": {
-    "file": "assets/index-xsH4HHeE.js",
-    "name": "index"
-  },
-  "resources/css/app.css": {
-    "file": "assets/app-ByKm9iCw.css",
-    "src": "resources/css/app.css",
-    "isEntry": true
-  },
-  "resources/js/app.js": {
-    "file": "assets/app-DZ-KIJMO.js",
-    "name": "app",
-    "src": "resources/js/app.js",
-    "isEntry": true,
-    "imports": [
-      "_index-xsH4HHeE.js"
-    ]
-  },
-  "resources/js/app.jsx": {
-    "file": "assets/app-CjK9FSKd.js",
-    "name": "app",
-    "src": "resources/js/app.jsx",
-    "isEntry": true,
-    "imports": [
-      "_index-xsH4HHeE.js"
-    ]
-  },
-  "resources/sass/app.scss": {
-    "file": "assets/app-Bw8W4AVY.css",
-    "src": "resources/sass/app.scss",
-    "isEntry": true
-  }
+    "_index-xsH4HHeE.js": {
+        "file": "assets/index-xsH4HHeE.js",
+        "name": "index"
+    },
+    "resources/css/app.css": {
+        "file": "assets/app-ByKm9iCw.css",
+        "src": "resources/css/app.css",
+        "isEntry": true
+    },
+    "resources/js/app.js": {
+        "file": "assets/app-DZ-KIJMO.js",
+        "name": "app",
+        "src": "resources/js/app.js",
+        "isEntry": true,
+        "imports": ["_index-xsH4HHeE.js"]
+    },
+    "resources/js/app.jsx": {
+        "file": "assets/app-CjK9FSKd.js",
+        "name": "app",
+        "src": "resources/js/app.jsx",
+        "isEntry": true,
+        "imports": ["_index-xsH4HHeE.js"]
+    },
+    "resources/sass/app.scss": {
+        "file": "assets/app-Bw8W4AVY.css",
+        "src": "resources/sass/app.scss",
+        "isEntry": true
+    }
 }
