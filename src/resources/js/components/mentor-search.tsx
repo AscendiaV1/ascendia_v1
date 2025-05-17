@@ -84,11 +84,11 @@ export default function MentorSearchComponent() {
 
   return (
     <main className="flex-1">
-      <div className="container px-4 py-8 mx-auto">
-        <h1 className="mb-8 text-3xl font-bold">Find Your Perfect Mentor</h1>
-        <div className="flex flex-col gap-8 md:flex-row">
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-8">Find Your Perfect Mentor</h1>
+        <div className="flex flex-col md:flex-row gap-8">
           {/* Filtrele */}
-          <aside className="w-full space-y-6 md:w-1/4">
+          <aside className="w-full md:w-1/4 space-y-6">
             <div>
               <Label htmlFor="search">Search</Label>
               <div className="relative">
@@ -153,11 +153,11 @@ export default function MentorSearchComponent() {
           </aside>
 
           {/* Lista de mentori */}
-          <div className="w-full space-y-6 md:w-3/4">
+          <div className="w-full md:w-3/4 space-y-6">
             {loading ? (
               // Loader afișat doar în zona listei de mentori
               <div className="flex items-center justify-center h-48">
-                <div className="w-16 h-16 border-t-4 border-blue-500 border-solid rounded-full animate-spin"></div>
+                <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-solid"></div>
               </div>
             ) : mentors.length > 0 ? (
               mentors.map((mentor, index) => (
@@ -178,10 +178,10 @@ export default function MentorSearchComponent() {
 
       {/* Success Modal */}
       {showSuccessModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="w-full max-w-md p-6 mx-4 bg-white rounded-lg">
-            <div className="mb-2 text-lg font-bold">Session Booked Successfully!</div>
-            <p className="mb-4 text-gray-600">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+            <div className="text-lg font-bold mb-2">Session Booked Successfully!</div>
+            <p className="text-gray-600 mb-4">
               Your session has been scheduled with {newSession?.mentor_name}
             </p>
 
@@ -200,13 +200,13 @@ export default function MentorSearchComponent() {
 
             <div className="flex gap-4">
               <button
-                className="flex-1 px-4 py-2 font-bold text-white transition-colors bg-blue-500 rounded hover:bg-blue-600"
+                className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition-colors"
                 onClick={() => navigate("/purchased-sessions")}
               >
                 View My Sessions
               </button>
               <button
-                className="flex-1 px-4 py-2 font-bold text-gray-800 transition-colors bg-gray-200 rounded hover:bg-gray-300"
+                className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded transition-colors"
                 onClick={() => setShowSuccessModal(false)}
               >
                 Close
@@ -238,9 +238,9 @@ function MentorCard({
   };
 
   return (
-    <div className="flex flex-col gap-4 p-6 border rounded-lg md:flex-row">
-      <div className="flex flex-row items-center justify-center md:w-1/6">
-        <Avatar className="w-24 h-24">
+    <div className="border rounded-lg p-6 flex flex-col md:flex-row gap-4">
+      <div className="md:w-1/6 flex flex-row justify-center items-center">
+        <Avatar className="h-24 w-24">
           <AvatarImage
             src={`https://api.dicebear.com/6.x/initials/svg?seed=${name}`}
             alt={name}
@@ -251,14 +251,14 @@ function MentorCard({
         </Avatar>
       </div>
       <div className="md:w-5/6">
-        <div className="flex items-start justify-between">
+        <div className="flex justify-between items-start">
           <div>
             <h2 className="text-xl font-semibold">{name}</h2>
             <p className="text-muted-foreground">{title}</p>
           </div>
           <div className="text-right">
             <div className="flex items-center">
-              <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+              <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
               <span className="ml-1 font-semibold">{rating}</span>
               <span className="ml-1 text-muted-foreground">({ratingCount})</span>
             </div>
@@ -267,36 +267,36 @@ function MentorCard({
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap gap-2 mt-2">
+        <div className="mt-2 flex flex-wrap gap-2">
           {expertise.map((skill, index) => (
             <Badge key={index} variant="secondary">
               {skill}
             </Badge>
           ))}
         </div>
-        <div className="flex items-center gap-4 mt-4">
+        <div className="mt-4 flex items-center gap-4">
           <div className="flex items-center">
-            <Clock className="w-4 h-4 text-muted-foreground" />
+            <Clock className="h-4 w-4 text-muted-foreground" />
             <span className="ml-1 text-sm text-muted-foreground">
               {yearsOfExperience} years of experience
             </span>
           </div>
           {availableNow && (
             <div className="flex items-center">
-              <Briefcase className="w-4 h-4 text-muted-foreground" />
+              <Briefcase className="h-4 w-4 text-muted-foreground" />
               <span className="ml-1 text-sm text-muted-foreground">
                 Available now
               </span>
             </div>
           )}
         </div>
-        <div className="flex gap-4 mt-4">
-          <Button className="text-white bg-blue-500" onClick={handleViewProfile}>
+        <div className="mt-4 flex gap-4">
+          <Button className="bg-blue-500 text-white" onClick={handleViewProfile}>
             View Profile
           </Button>
           <Button
-            className="text-white bg-green-500"
-            // onClick={() => onBookSession(id)} // Call the booking function
+            className="bg-green-500 text-white"
+            onClick={() => onBookSession(id)} // Call the booking function
           >
             Book a Session
           </Button>
