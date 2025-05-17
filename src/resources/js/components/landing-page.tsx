@@ -59,17 +59,17 @@ export default function LandingPageComponent() {
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">Why Choose Ascendia?</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <FeatureCard 
+              <FeatureCard
                 icon={<Search className="h-12 w-12 text-blue-600" />}
                 title="Easy Mentor Search"
                 description="Find the perfect mentor with our advanced search and compatibility filters."
               />
-              <FeatureCard 
+              <FeatureCard
                 icon={<Calendar className="h-12 w-12 text-blue-600" />}
                 title="Flexible Scheduling"
                 description="Book sessions that fit your schedule, with mentors available globally."
               />
-              <FeatureCard 
+              <FeatureCard
                 icon={<Star className="h-12 w-12 text-blue-600" />}
                 title="Verified Experts"
                 description="Connect with verified mentors, rated by the community for quality assurance."
@@ -83,17 +83,17 @@ export default function LandingPageComponent() {
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">How It Works</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <StepCard 
+              <StepCard
                 number={1}
                 title="Create Your Profile"
                 description="Sign up and tell us about your goals and interests."
               />
-              <StepCard 
+              <StepCard
                 number={2}
                 title="Find Your Mentor"
                 description="Use our search tools to find the perfect mentor for you."
               />
-              <StepCard 
+              <StepCard
                 number={3}
                 title="Start Learning"
                 description="Book sessions and start your journey to success."
@@ -107,12 +107,12 @@ export default function LandingPageComponent() {
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">What Our Users Say</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <TestimonialCard 
+              <TestimonialCard
                 quote="Ascendia helped me find the perfect mentor to guide me in my career transition. I'm now in my dream job!"
                 author="Sarah L."
                 role="Software Engineer"
               />
-              <TestimonialCard 
+              <TestimonialCard
                 quote="As a mentor, I love how easy it is to connect with mentees who are truly passionate about learning."
                 author="Michael R."
                 role="Marketing Executive"
@@ -129,7 +129,7 @@ export default function LandingPageComponent() {
               Join Ascendia today and take the first step towards achieving your goals.
             </p>
             <Button className="bg-green-500 hover:bg-green-600 text-white text-lg px-8 py-3">
-              <Link to="/enroll">Get Started Now</Link>
+              <Link to="/login">Get Started Now</Link>
             </Button>
           </div>
         </section>

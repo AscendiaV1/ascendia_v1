@@ -6,8 +6,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/api/v1/user', function () {
-    return response()->json(Auth::user());
+    return response()->json(Auth::user()->load(['mentor.expertise', 'mentor.languages', 'mentor.experience', 'mentor.education', 'mentor.mentorshipAreas', 'mentor.achievements']));
 })->middleware('auth');
+
+Route::post('/api/v1/user/update/{id}', [MentorController::class, 'updateProfile'])->middleware('auth');
 
 Route::get('/api/v1/mentors/search', [MentorController::class, 'search']);
 Route::get('/api/v1/mentor/{id}', [MentorController::class, 'show']);

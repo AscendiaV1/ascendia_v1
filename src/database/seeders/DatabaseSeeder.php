@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         // Crearea rolurilor
         Role::firstOrCreate(['name' => 'administrator']);
         Role::firstOrCreate(['name' => 'mentor']);
+        Role::firstOrCreate(['name' => 'mentee']);
 
         $mentorRole = Role::where('name', 'mentor')->first();
 
@@ -46,7 +47,7 @@ class DatabaseSeeder extends Seeder
                 "user" => [
                     "name" => "Alex Johnson",
                     "email" => "alex.johnson@example.com",
-                    "password" => rand(10, 20),
+                    "password" => "parola123",
                 ],
                 "mentor" => [
                     'name' => 'Alex Johnson',
@@ -101,7 +102,7 @@ class DatabaseSeeder extends Seeder
                 "user" => [
                     "name" => "Maria Lopez",
                     "email" => "maria.lopez@example.com",
-                    "password" => rand(10, 20),
+                    "password" => "parola123",
                 ],
                 "mentor" => [
                     'name' => 'Maria Lopez',
@@ -156,7 +157,7 @@ class DatabaseSeeder extends Seeder
                 "user" => [
                     "name" => "Sarah Connor",
                     "email" => "sarah.connor@example.com",
-                    "password" => rand(10, 20),
+                    "password" => "parola123",
                 ],
                 "mentor" => [
                     'name' => 'Sarah Connor',
@@ -211,7 +212,7 @@ class DatabaseSeeder extends Seeder
                 "user" => [
                     "name" => "Emily Davis",
                     "email" => "emily.davis@example.com",
-                    "password" => rand(10, 20),
+                    "password" => "parola123",
                 ],
                 "mentor" => [
                     'name' => 'Emily Davis',
@@ -266,7 +267,7 @@ class DatabaseSeeder extends Seeder
                 "user" => [
                     "name" => "Michael Brown",
                     "email" => "michael.brown@example.com",
-                    "password" => rand(10, 20),
+                    "password" => "parola123",
                 ],
                 "mentor" => [
                     'name' => 'Michael Brown',
@@ -321,7 +322,7 @@ class DatabaseSeeder extends Seeder
                 "user" => [
                     "name" => "Sophia Turner",
                     "email" => "sophia.turner@example.com",
-                    "password" => rand(10, 20),
+                    "password" => "parola123",
                 ],
                 "mentor" => [
                     'name' => 'Sophia Turner',
@@ -451,7 +452,7 @@ class DatabaseSeeder extends Seeder
                 'updated_at' => now(),
             ],
         ]);
-        
+
 
         DB::table('resources')->insert([
             [

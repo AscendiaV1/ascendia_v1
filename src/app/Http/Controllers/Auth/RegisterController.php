@@ -7,6 +7,9 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
+use Illuminate\Validation\ValidationException;
 
 class RegisterController extends Controller
 {
@@ -63,10 +66,33 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        return DB::transaction(function () use ($data) {
+            $user = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+            ]);
+
+            if (!$user) {
+                throw ValidationException::withMessages(['user' => 'User creation failed']);
+            }
+
+            // Atribuie rolurile selectate
+            if (!empty($data['userType']) && is_array($data['userType'])) {
+                foreach ($data['userType'] as $roleName) {
+                    $role = Role::where('name', $roleName)->first();
+
+                    if (!$role) {
+                        throw ValidationException::withMessages([
+                            'role' => "Rolul '{$roleName}' nu a fost găsit."
+                        ]);
+                    }
+
+                    $user->assignRole($role);
+                }
+            }
+
+            return $user;
+        });
     }
 }
