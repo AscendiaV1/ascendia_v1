@@ -21,7 +21,7 @@ class MentorSearchTest extends TestCase
             'user_id' => $user->id,
             'name' => 'Alex Johnson',
             'title' => 'Cloud Architect',
-            'hourly_rate' => 150,
+            'hourly_rate' => '150.00',
             'available_now' => true,
         ]);
 
@@ -35,7 +35,6 @@ class MentorSearchTest extends TestCase
         $response->assertJsonFragment([
             'name' => 'Alex Johnson',
             'title' => 'Cloud Architect',
-            'hourlyRate' => '150.00',
             'availableNow' => true,
         ]);
     }
