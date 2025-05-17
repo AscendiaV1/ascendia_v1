@@ -49,13 +49,13 @@ class SessionController extends Controller
         if(empty($user)){
             abort('401', "Unauthorized");
         }
-    
+
         $validatedData = $request->validate([
             'mentor_id' => 'required|exists:mentors,id',
         ]);
 
         $mentor = Mentor::findOrFail($validatedData['mentor_id']);
-    
+
         $session = LearningSessions::create([
             'mentor_id' => $mentor->id,
             'user_id' => $user->id,
@@ -64,7 +64,7 @@ class SessionController extends Controller
             'duration' => 60,
             'status' => 'Upcoming',
         ]);
-    
+
         return response()->json($session);
     }
 
